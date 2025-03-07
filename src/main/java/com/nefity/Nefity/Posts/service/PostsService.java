@@ -7,9 +7,8 @@ import java.util.List;
 
 @Service
 public interface PostsService {
-
     List<Posts> getAllPosts();
     Posts addPost(Posts Post);
-    void deletePost(String title);
+    void deletePost(Long id);
     Posts updatePosts(Posts Post);
 }
