@@ -8,6 +8,7 @@ public interface userInfoService {
 
     UserInfo getUserInfo(UserInfo User);
     UserInfo addUserInfo(UserInfo User);
+    UserInfo updateUserInfo(UserInfo User);
     void deleteUser(String nickName);
 
 }

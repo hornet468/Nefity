@@ -15,6 +15,7 @@ public class UserInfo {
     private LocalDate dateOfBirth;
     private String categoryProfile;
     private int age;
+    private long id;
 
 
 }

@@ -17,7 +17,13 @@ public class userInfoImpl implements userInfoService {
     }
 
     @Override
+    public UserInfo updateUserInfo(UserInfo User) {
+        return null;
+    }
+
+    @Override
     public void deleteUser(String nickName) {
+
 
     }
 }
