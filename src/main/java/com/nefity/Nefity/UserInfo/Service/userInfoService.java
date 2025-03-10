@@ -9,5 +9,4 @@ public interface userInfoService {
     UserInfo getUserInfo(UserInfo User);
     UserInfo addUserInfo(UserInfo User);
     void deleteUser(String nickName);
-
 }
