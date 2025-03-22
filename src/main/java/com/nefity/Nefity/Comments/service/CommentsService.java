@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public interface CommentsService {
     List<Comments> getAllComments();
-    Comments addComment(Long postId,Comments comment);
+    Comments addComment(Long postId, Long userId, Comments comment);
     void deleteComment(long id);
     Comments updateComments(Comments comment);
 }

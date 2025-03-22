@@ -5,6 +5,8 @@ import com.nefity.Nefity.Comments.repository.CommentsRepository;
 import com.nefity.Nefity.Comments.service.CommentsService;
 import com.nefity.Nefity.Posts.model.Posts;
 import com.nefity.Nefity.Posts.repository.PostsRepository;
+import com.nefity.Nefity.UserInfo.Model.UserInfo;
+import com.nefity.Nefity.UserInfo.Repository.UserInfoRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,7 @@ import java.util.List;
 public class CommentsServiceImpl implements CommentsService {
     private final CommentsRepository commentsRepository;
     private final PostsRepository postsRepository;
+    private final UserInfoRepository userInfoRepository;
 
     @Override
     public List<Comments> getAllComments() {
@@ -22,11 +25,16 @@ public class CommentsServiceImpl implements CommentsService {
     }
 
     @Override
-    public Comments addComment(Long postId, Comments comment) {
+    public Comments addComment(Long postId, Long userId, Comments comment) {
         Posts post = postsRepository.findById(postId)
                 .orElseThrow(() -> new RuntimeException("Пост не знайдено"));
 
-        comment.setPost(post); // Встановлюємо зв’язок коментаря з постом
+        UserInfo user = userInfoRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        comment.setUser(user);
+        comment.setPost(post);
+
         return commentsRepository.save(comment);
     }
 

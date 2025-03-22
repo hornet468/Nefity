@@ -44,8 +44,4 @@ public class UserInfoController {
 
         return service.addUserInfo(User);
     }
-
-
-
-
 }
