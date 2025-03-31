@@ -5,6 +5,7 @@ import com.nefity.Nefity.UserInfo.Repository.UserInfoRepository;
 import com.nefity.Nefity.UserInfo.Service.UserInfoService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Primary;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,7 @@ import java.util.Optional;
 
 public class UserInfoImpl implements UserInfoService {
     private final UserInfoRepository repository;
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public Optional<UserInfo> getUserInfo(long id) {
@@ -29,6 +31,7 @@ public class UserInfoImpl implements UserInfoService {
 
     @Override
     public UserInfo addUserInfo(UserInfo User) {
+        User.setPassword(passwordEncoder.encode(User.getPassword()));
         return repository.save(User);
     }
 

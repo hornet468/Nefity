@@ -20,8 +20,10 @@ public class UserInfo {
     private long id;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String nickName;
     private String email;
+    private String password;
     private String country;
     private String profilePhoto;
     private LocalDate dateOfBirth;
@@ -37,3 +39,4 @@ public class UserInfo {
     @JsonIgnoreProperties("user")
     private List<Likes> likes = new ArrayList<>();
 }
+
