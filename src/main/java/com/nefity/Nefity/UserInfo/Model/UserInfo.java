@@ -2,6 +2,7 @@ package com.nefity.Nefity.UserInfo.Model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.nefity.Nefity.Comments.model.Comments;
+import com.nefity.Nefity.Follows.model.Follows;
 import com.nefity.Nefity.Likes.model.Likes;
 import com.nefity.Nefity.Posts.model.Posts;
 import jakarta.persistence.*;
@@ -36,4 +37,7 @@ public class UserInfo {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("user")
     private List<Likes> likes = new ArrayList<>();
+    @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL, orphanRemoval = true )
+    @JsonIgnoreProperties("user")
+    private List<Follows> follows = new ArrayList<>();
 }

@@ -14,7 +14,6 @@ import java.util.Optional;
 @RequestMapping("/api/v1/userinfo")
 
 public class UserInfoController {
-
     private final UserInfoService service;
 
     @GetMapping ("/{id}")
@@ -29,19 +28,16 @@ public class UserInfoController {
 
     @DeleteMapping("delete_user/{id}")
     public void deleteUserId(@PathVariable Long id) {
-
         service.deleteUserId(id);
     }
 
     @PutMapping("update_userinfo")
     public UserInfo updateUserInfo(@RequestBody UserInfo User) {
-
         return service.updateUserInfo(User);
     }
 
     @PostMapping("add_userinfo")
     public UserInfo addUserInfo(@RequestBody UserInfo User) {
-
         return service.addUserInfo(User);
     }
 }
