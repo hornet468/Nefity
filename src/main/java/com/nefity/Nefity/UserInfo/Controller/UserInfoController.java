@@ -17,7 +17,7 @@ public class UserInfoController {
 
     private final UserInfoService service;
 
-    @GetMapping ("/{id}")
+    @GetMapping ("/get_by_id/{id}")
     public Optional<UserInfo> getUserInfo(@PathVariable long id) {
         return service.getUserInfo(id);
     }
@@ -39,7 +39,7 @@ public class UserInfoController {
         return service.updateUserInfo(User);
     }
 
-    @PostMapping("add_userinfo")
+    @PostMapping("/add_userinfo")
     public UserInfo addUserInfo(@RequestBody UserInfo User) {
 
         return service.addUserInfo(User);

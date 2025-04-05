@@ -16,6 +16,7 @@ import java.util.List;
 
 @Data
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Posts {
     @Id
     @GeneratedValue

@@ -48,7 +48,7 @@ public class CommentsServiceImpl implements CommentsService {
         Comments existingComment = commentsRepository.findById(comment.getId())
                 .orElseThrow(() -> new RuntimeException("Коментар не знайдено"));
 
-        existingComment.setCommentsText(comment.getCommentsText()); // Оновлення тексту
+        existingComment.setCommentsText(comment.getCommentsText());
         return commentsRepository.save(existingComment);
     }
 }
