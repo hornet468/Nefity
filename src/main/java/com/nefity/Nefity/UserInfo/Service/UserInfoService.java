@@ -1,6 +1,7 @@
 package com.nefity.Nefity.UserInfo.Service;
 
 import com.nefity.Nefity.UserInfo.Model.UserInfo;
+import com.nefity.Nefity.UserInfo.dto.UserInfoDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.Optional;
 public interface UserInfoService {
 
     Optional<UserInfo> getUserInfo(long id);
-    List<UserInfo> getAllUserInfo();
+    List<UserInfoDTO> getAllUserInfo();
 
     UserInfo addUserInfo(UserInfo User);
     UserInfo updateUserInfo(UserInfo User);

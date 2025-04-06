@@ -2,6 +2,7 @@ package com.nefity.Nefity.UserInfo.Controller;
 
 import com.nefity.Nefity.UserInfo.Model.UserInfo;
 import com.nefity.Nefity.UserInfo.Service.UserInfoService;
+import com.nefity.Nefity.UserInfo.dto.UserInfoDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public class UserInfoController {
     }
 
     @GetMapping
-    public List<UserInfo> getAllUserInfo() {
+    public List<UserInfoDTO> getAllUserInfo() {
         return service.getAllUserInfo();
     }
 

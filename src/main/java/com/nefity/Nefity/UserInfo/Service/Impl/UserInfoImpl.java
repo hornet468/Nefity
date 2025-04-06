@@ -3,6 +3,7 @@ package com.nefity.Nefity.UserInfo.Service.Impl;
 import com.nefity.Nefity.UserInfo.Model.UserInfo;
 import com.nefity.Nefity.UserInfo.Repository.UserInfoRepository;
 import com.nefity.Nefity.UserInfo.Service.UserInfoService;
+import com.nefity.Nefity.UserInfo.dto.UserInfoDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -10,11 +11,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Service
 @Primary
-
 public class UserInfoImpl implements UserInfoService {
     private final UserInfoRepository repository;
     private PasswordEncoder passwordEncoder;
@@ -25,8 +26,12 @@ public class UserInfoImpl implements UserInfoService {
     }
 
     @Override
-    public List<UserInfo> getAllUserInfo() {
-        return repository.findAll();
+    public List<UserInfoDTO> getAllUserInfo() {
+        List<UserInfo> userInfoList = repository.findAll();
+        return userInfoList.stream()
+                .map(user -> new UserInfoDTO(user.getId(),
+                        user.getNickName(), user.getProfilePhoto()))
+                .collect(Collectors.toList());
     }
 
     @Override
