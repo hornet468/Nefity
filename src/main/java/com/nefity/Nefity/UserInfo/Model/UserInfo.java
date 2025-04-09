@@ -21,7 +21,7 @@ public class UserInfo {
     private String firstName;
     private String lastName;
     @Column(unique = true)
-    private String nickName;
+    private String nickName; //getName
     private String email;
     private String password;
     private String country;
