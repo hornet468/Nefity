@@ -1,5 +1,6 @@
 package com.nefity.Nefity.Posts.service.impl;
 
+import com.nefity.Nefity.Likes.dto.LikeDTO;
 import com.nefity.Nefity.Posts.dto.PostDTO;
 import com.nefity.Nefity.Posts.model.Posts;
 import com.nefity.Nefity.Posts.repository.PostsRepository;
@@ -33,7 +34,16 @@ public class PostsServiceImpl implements PostsService {
                                 post.getUser().getId(),
                                 post.getUser().getNickName(),
                                 post.getUser().getProfilePhoto()
-                        )
+                        ),
+                        post.getLikes().stream()
+                                .map(like -> new LikeDTO(
+                                        like.getUser().getId(),
+                                        new UserInfoDTO(
+                                                like.getUser().getId(),
+                                                like.getUser().getNickName(),
+                                                like.getUser().getProfilePhoto()
+                                        )
+                                )).collect(Collectors.toList())
                 ))
                 .collect(Collectors.toList());
     }

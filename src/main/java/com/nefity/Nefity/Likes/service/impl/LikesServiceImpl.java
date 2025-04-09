@@ -29,7 +29,6 @@ public class LikesServiceImpl implements LikesService {
         return repository.findByPostId(postId).stream()
                 .map(likes -> new LikeDTO(
                         likes.getId(),
-                        likes.getTimestamp(),
                         new UserInfoDTO(
                                 likes.getUser().getId(),
                                 likes.getUser().getNickName(),
@@ -39,7 +38,6 @@ public class LikesServiceImpl implements LikesService {
                 ))
                 .collect(Collectors.toList());
     }
-
 
     @Override
     public Likes addLike(Likes like, Long postId) {
