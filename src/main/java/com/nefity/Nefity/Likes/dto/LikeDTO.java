@@ -10,6 +10,5 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class LikeDTO {
     private long id;
-    private LocalDateTime timestamp;
     private UserInfoDTO user;
 }
