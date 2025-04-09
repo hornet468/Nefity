@@ -8,8 +8,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class UserInfoDTO {
-    @Id
-    @GeneratedValue
     private Long id;
     private String profilePhoto;
     private String nickName;
