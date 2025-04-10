@@ -21,8 +21,10 @@ public class UserInfo {
     private long id;
     private String firstName;
     private String lastName;
-    private String nickName;
+    @Column(unique = true)
+    private String nickName; //getName
     private String email;
+    private String password;
     private String country;
     private String profilePhoto;
     private LocalDate dateOfBirth;
@@ -43,3 +45,4 @@ public class UserInfo {
     private List<Follows> follows = new ArrayList<>();
 
 }
+

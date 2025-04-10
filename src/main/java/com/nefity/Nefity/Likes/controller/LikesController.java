@@ -1,5 +1,6 @@
 package com.nefity.Nefity.Likes.controller;
 
+import com.nefity.Nefity.Likes.dto.LikeDTO;
 import com.nefity.Nefity.Likes.model.Likes;
 import com.nefity.Nefity.Likes.service.LikesService;
 import lombok.AllArgsConstructor;
@@ -14,7 +15,7 @@ public class LikesController {
     private final LikesService service;
 
     @GetMapping("/{postId}")
-    public List<Likes> getAllLikesForPost(@PathVariable Long postId) {
+    public List<LikeDTO> getAllLikesForPost(@PathVariable Long postId) {
         return service.getAllLikesForPost(postId);
     }
     @PostMapping("/{postId}")

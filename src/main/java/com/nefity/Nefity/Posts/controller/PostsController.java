@@ -1,5 +1,6 @@
 package com.nefity.Nefity.Posts.controller;
 
+import com.nefity.Nefity.Posts.dto.PostDTO;
 import com.nefity.Nefity.Posts.model.Posts;
 import com.nefity.Nefity.Posts.service.PostsService;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,7 @@ public class PostsController {
     private final PostsService service;
 
     @GetMapping
-    public List<Posts> getAllPosts() {
+    public List<PostDTO> getAllPosts() {
         return service.getAllPosts();
     }
     @PostMapping("add_post")

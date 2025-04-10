@@ -2,13 +2,14 @@ package com.nefity.Nefity.UserInfo.Controller;
 
 import com.nefity.Nefity.UserInfo.Model.UserInfo;
 import com.nefity.Nefity.UserInfo.Service.UserInfoService;
+import com.nefity.Nefity.UserInfo.dto.UserInfoDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-
+@CrossOrigin(origins = "http://localhost:5173/")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/v1/userinfo")
@@ -16,13 +17,13 @@ import java.util.Optional;
 public class UserInfoController {
     private final UserInfoService service;
 
-    @GetMapping ("/{id}")
+    @GetMapping ("/get_by_id/{id}")
     public Optional<UserInfo> getUserInfo(@PathVariable long id) {
         return service.getUserInfo(id);
     }
 
     @GetMapping
-    public List<UserInfo> getAllUserInfo() {
+    public List<UserInfoDTO> getAllUserInfo() {
         return service.getAllUserInfo();
     }
 
@@ -36,8 +37,10 @@ public class UserInfoController {
         return service.updateUserInfo(User);
     }
 
-    @PostMapping("add_userinfo")
+    @PostMapping("/add_userinfo")
     public UserInfo addUserInfo(@RequestBody UserInfo User) {
         return service.addUserInfo(User);
     }
 }
+
+
