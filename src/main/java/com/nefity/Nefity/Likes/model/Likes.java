@@ -23,7 +23,6 @@ public class Likes {
     private LocalDateTime timestamp;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "post_id", nullable = false)
-    //@JsonIgnoreProperties("likes")
     @JsonIgnore
     private Posts post;
 }

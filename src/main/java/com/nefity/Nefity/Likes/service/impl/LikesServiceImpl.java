@@ -41,18 +41,12 @@ public class LikesServiceImpl implements LikesService {
 
     @Override
     public Likes addLike(Likes like, Long postId) {
-
-        System.out.println("Adding like for postId: " + postId);
-        System.out.println("User ID: " + (like.getUser() != null ? like.getUser().getId() : "NULL"));
-        System.out.println("User ID from Like object: " + like.getUser().getId());
-
         Posts post = postsRepository.findById(postId)
                 .orElseThrow(() -> new RuntimeException("Post not found with id: " + postId));
 
         UserInfo user = userInfoRepository.findById(like.getUser().getId())
 
                 .orElseThrow(() -> new RuntimeException("User not found"));
-        System.out.println("User ID from Like object: " + like.getUser().getId());
 
         like.setPost(post);
         like.setUser(user);

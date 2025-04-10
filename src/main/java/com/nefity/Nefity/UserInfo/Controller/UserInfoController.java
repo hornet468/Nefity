@@ -15,7 +15,6 @@ import java.util.Optional;
 @RequestMapping("/api/v1/userinfo")
 
 public class UserInfoController {
-
     private final UserInfoService service;
 
     @GetMapping ("/get_by_id/{id}")
