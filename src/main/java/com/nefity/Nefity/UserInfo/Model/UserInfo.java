@@ -28,6 +28,7 @@ public class UserInfo {
     private LocalDate dateOfBirth;
     private String categoryProfile;
     private int age;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties("user")
     private List<Posts> posts = new ArrayList<>();
@@ -40,4 +41,5 @@ public class UserInfo {
     @OneToMany(mappedBy = "user" , cascade = CascadeType.ALL, orphanRemoval = true )
     @JsonIgnoreProperties("user")
     private List<Follows> follows = new ArrayList<>();
+
 }

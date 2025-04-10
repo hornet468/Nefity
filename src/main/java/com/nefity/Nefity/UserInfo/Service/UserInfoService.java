@@ -11,9 +11,7 @@ public interface UserInfoService {
 
     Optional<UserInfo> getUserInfo(long id);
     List<UserInfo> getAllUserInfo();
-
     UserInfo addUserInfo(UserInfo User);
     UserInfo updateUserInfo(UserInfo User);
-
     void deleteUserId(long id);
 }

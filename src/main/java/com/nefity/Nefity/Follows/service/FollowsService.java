@@ -10,7 +10,8 @@ import java.util.Optional;
 public interface FollowsService {
 
     List<Follows> getAllUserFollows();
-    Follows getUserFollowById(Follows follow);
-    Follows followInUser
+    Optional <Follows> getUserFollowById(long id);
+    Follows addFollows (Follows follows , Long userId)  ;
+    void deleteFollows (Long id);
 
 }
