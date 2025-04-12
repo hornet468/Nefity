@@ -4,6 +4,7 @@ import com.nefity.Nefity.UserInfo.Model.UserInfo;
 import com.nefity.Nefity.UserInfo.Repository.UserInfoRepository;
 import com.nefity.Nefity.UserInfo.Service.UserInfoService;
 import com.nefity.Nefity.UserInfo.dto.UserInfoDTO;
+import com.nefity.Nefity.UserInfo.mapper.UserInfoMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 public class UserInfoImpl implements UserInfoService {
     private final UserInfoRepository repository;
     private PasswordEncoder passwordEncoder;
+    private UserInfoMapper mapper;
 
     @Override
     public Optional<UserInfo> getUserInfo(long id) {
@@ -28,10 +30,7 @@ public class UserInfoImpl implements UserInfoService {
     @Override
     public List<UserInfoDTO> getAllUserInfo() {
         List<UserInfo> userInfoList = repository.findAll();
-        return userInfoList.stream()
-                .map(user -> new UserInfoDTO(user.getId(),
-                        user.getNickName(), user.getProfilePhoto()))
-                .collect(Collectors.toList());
+        return mapper.toDTOList(userInfoList);
     }
 
     @Override
