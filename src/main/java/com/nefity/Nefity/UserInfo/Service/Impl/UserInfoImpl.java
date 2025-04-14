@@ -28,6 +28,7 @@ public class UserInfoImpl implements UserInfoService {
     @Override
     public List<UserInfoDTO> getAllUserInfo() {
         List<UserInfo> userInfoList = repository.findAll();
+
         return userInfoList.stream()
                 .map(user -> new UserInfoDTO(user.getId(),
                         user.getNickName(), user.getProfilePhoto()))

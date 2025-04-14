@@ -1,5 +1,6 @@
 package com.nefity.Nefity.Follows.controller;
 
+import com.nefity.Nefity.Follows.dto.FollowsDTO;
 import com.nefity.Nefity.Follows.model.Follows;
 import com.nefity.Nefity.Follows.service.FollowsService;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.Optional;
         private final FollowsService service;
 
     @GetMapping
-    public List<Follows> getAllUserFollows() {
+    public List<FollowsDTO> getAllUserFollows() {
         return service.getAllUserFollows();
     }
 
@@ -25,7 +26,7 @@ import java.util.Optional;
         return service.getUserFollowById(id);
     }
 
-    @PostMapping("add_follows/{userId}")
+    @PostMapping("/add_follows/{userId}")
     public Follows addFollows(@RequestBody Follows follows, @PathVariable  Long userId) {
         return service.addFollows(follows , userId);
     }

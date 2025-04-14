@@ -1,15 +1,16 @@
 package com.nefity.Nefity.Follows.dto;
 
-import com.nefity.Nefity.UserInfo.Model.UserInfo;
+import com.nefity.Nefity.UserInfo.dto.UserInfoDTO;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 
+@Data
 @AllArgsConstructor // Робить конструктор замість тебе, використовуючи твої поля
 public class FollowsDTO {
 
     private Long id;
-    private UserInfo user;
+    private UserInfoDTO user;
 
-    public FollowsDTO() {}
 
 
 
