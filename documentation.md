@@ -146,3 +146,44 @@ id – ID користувача (тип: Long)
 - 401 Unauthorized – Користувач не авторизований
 - 400 Bad Request – Некоректні дані
 - 500 Internal Server Error – Помилка сервера
+
+
+# Likes API
+
+Base URL: /api/v1/likes
+
+---
+
+## GET /
+
+Опис: Отримати всі пости (GetAllPosts).
+    
+    Запит: /api/v1/likes/{post_id}
+
+Відповідь:
+- 200 OK – Список постів
+- 401 Unauthorized – Користувач не авторизований
+- 500 Internal Server Error – Помилка сервера
+
+---
+
+## POST /add_like
+
+Опис: Додати лайк (AddPost).
+
+    Запит:
+    {
+        "user": {
+        "id": 3
+        }
+    }
+
+    Шлях:
+    /api/v1/likes/{post_id}
+Відповідь:
+- 200 OK – Повертає like
+- 401 Unauthorized – Користувач не авторизований
+- 400 Bad Request – Некоректні дані
+- 500 Internal Server Error – Помилка сервера
+
+---
