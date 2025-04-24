@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:5173/")
+//@CrossOrigin(origins = "http://localhost:5173/")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/v1/userinfo")
@@ -29,7 +29,6 @@ public class UserInfoController {
 
     @DeleteMapping("delete_user/{id}")
     public void deleteUserId(@PathVariable Long id) {
-
         service.deleteUserId(id);
     }
 

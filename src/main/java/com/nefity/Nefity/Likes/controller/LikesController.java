@@ -14,7 +14,6 @@ import java.util.List;
 public class LikesController {
     private final LikesService service;
 
-
     @GetMapping("/{postId}")
     public List<LikeDTO> getAllLikesForPost(@PathVariable Long postId) {
         return service.getAllLikesForPost(postId);

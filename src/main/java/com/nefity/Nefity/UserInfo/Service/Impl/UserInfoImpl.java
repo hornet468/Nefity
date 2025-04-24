@@ -30,14 +30,6 @@ public class UserInfoImpl implements UserInfoService {
     @Override
     public List<UserInfoDTO> getAllUserInfo() {
         List<UserInfo> userInfoList = repository.findAll();
-        System.out.println("UserInfo List size: " + userInfoList.size()); // Перевірка кількості елементів
-
-        // Перевірка мапінгу вручну
-        for (UserInfo userInfo : userInfoList) {
-            UserInfoDTO dto = mapper.toDTO(userInfo);
-            System.out.println(dto.getNickName()); // Перевірка результату мапінгу
-        }
-
         return mapper.toDTOList(userInfoList);
     }
 

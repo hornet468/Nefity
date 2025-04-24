@@ -9,6 +9,9 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface UserInfoMapper {
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "nickName", target = "nickName")
+    @Mapping(source = "profilePhoto", target = "profilePhoto")
     UserInfoDTO toDTO(UserInfo userInfo);
 
     List<UserInfoDTO> toDTOList(List<UserInfo> userInfoList);
