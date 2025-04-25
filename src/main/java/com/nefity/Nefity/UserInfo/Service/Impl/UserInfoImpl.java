@@ -30,6 +30,7 @@ public class UserInfoImpl implements UserInfoService {
     @Override
     public List<UserInfoDTO> getAllUserInfo() {
         List<UserInfo> userInfoList = repository.findAll();
+        System.out.println("Fetched users: " + userInfoList.size()); // Додайте лог
         return mapper.toDTOList(userInfoList);
     }
 

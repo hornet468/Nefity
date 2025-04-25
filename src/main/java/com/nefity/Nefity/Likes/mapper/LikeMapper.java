@@ -13,6 +13,5 @@ import java.util.List;
 public interface LikeMapper {
     @Mapping(target = "user", source = "like.user")
     LikeDTO toDTO(Likes like);
-
     List<LikeDTO> toDTOList(List<Likes> likes);
 }
