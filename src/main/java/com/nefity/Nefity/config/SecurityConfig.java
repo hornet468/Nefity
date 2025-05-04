@@ -44,7 +44,7 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/userinfo/add_userinfo").permitAll()
+                        .requestMatchers("/api/v1/auth/register").permitAll()
                         .requestMatchers("/api/v1/userinfo").permitAll()
                         .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll() // <--- Ось це
                         .anyRequest().authenticated()

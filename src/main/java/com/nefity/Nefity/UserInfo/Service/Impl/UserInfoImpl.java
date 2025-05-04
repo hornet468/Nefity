@@ -34,11 +34,7 @@ public class UserInfoImpl implements UserInfoService {
         return mapper.toDTOList(userInfoList);
     }
 
-    @Override
-    public UserInfo addUserInfo(UserInfo User) {
-        User.setPassword(passwordEncoder.encode(User.getPassword()));
-        return repository.save(User);
-    }
+
 
     @Override
     public UserInfo updateUserInfo(UserInfo User) {

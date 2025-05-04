@@ -38,11 +38,7 @@ public class UserInfoController {
         return service.updateUserInfo(User);
     }
 
-    @PostMapping("/add_userinfo")
-    public UserInfo addUserInfo(@RequestBody UserInfo User) {
 
-        return service.addUserInfo(User);
-    }
 }
 
 
