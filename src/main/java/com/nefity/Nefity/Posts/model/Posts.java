@@ -8,6 +8,7 @@ import com.nefity.Nefity.Likes.model.Likes;
 import com.nefity.Nefity.UserInfo.Model.UserInfo;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

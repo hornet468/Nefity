@@ -34,8 +34,6 @@ public class UserInfoImpl implements UserInfoService {
         return mapper.toDTOList(userInfoList);
     }
 
-
-
     @Override
     public UserInfo updateUserInfo(UserInfo User) {
         return repository.save(User);

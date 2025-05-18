@@ -7,6 +7,7 @@ import com.nefity.Nefity.Posts.model.Posts;
 import com.nefity.Nefity.UserInfo.Model.UserInfo;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 

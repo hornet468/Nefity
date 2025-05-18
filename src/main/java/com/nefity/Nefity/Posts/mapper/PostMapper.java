@@ -13,8 +13,6 @@ import java.util.List;
 
 @Mapper(componentModel = "spring", uses = {LikeMapper.class, UserInfoMapper.class})
 public interface PostMapper {
-    @Mapping(target = "user", source = "post.user")
-    @Mapping(target = "likes", source = "post.likes")
     PostDTO toDTO(Posts post);
 
     List<PostDTO> toDTOList(List<Posts> posts);

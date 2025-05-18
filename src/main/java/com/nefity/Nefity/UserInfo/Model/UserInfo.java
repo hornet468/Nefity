@@ -6,12 +6,17 @@ import com.nefity.Nefity.Likes.model.Likes;
 import com.nefity.Nefity.Posts.model.Posts;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class UserInfo {
